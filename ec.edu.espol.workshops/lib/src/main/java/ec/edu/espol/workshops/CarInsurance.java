@@ -1,5 +1,7 @@
 package ec.edu.espol.workshops;
 
+import java.util.Scanner;
+
 public class CarInsurance {
 	public static void main(String[] args) {
     	
