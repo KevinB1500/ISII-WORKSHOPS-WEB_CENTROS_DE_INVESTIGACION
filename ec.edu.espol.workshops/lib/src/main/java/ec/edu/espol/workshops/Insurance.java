@@ -3,7 +3,6 @@ package ec.edu.espol.workshops;
 public class Insurance {
 
 	private int basePremium = 500;
-	private int ageLimit = 80;
 	protected Customer customer;
 	protected int premium;
 	

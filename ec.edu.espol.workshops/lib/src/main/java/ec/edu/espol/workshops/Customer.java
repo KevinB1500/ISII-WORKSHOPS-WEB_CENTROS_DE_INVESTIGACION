@@ -35,7 +35,7 @@ public class Customer {
 		this.age = age;
 	}
 	
-	public void setisMarried (boolean isMarriied) {
+	public void setisMarried (boolean isMarried) {
 		this.isMarried = isMarried;
 	}
 	public void setDriverLicense (boolean hasDriverLicense) {
