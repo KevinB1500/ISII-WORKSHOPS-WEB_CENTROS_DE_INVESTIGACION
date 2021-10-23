@@ -7,7 +7,7 @@ public class Insurance {
 	protected int premium;
 	
 	public Insurance(Customer customer) {
-		this.customer=customer;
+		this.customer = customer != null ? new Customer(customer.getAge(), customer.getDriverLicense(), customer.getSex(), customer.getisMarried()) : null;
 		this.premium=basePremium;
 			
 	}
@@ -20,10 +20,10 @@ public class Insurance {
 		if(customer.getAge()>45 && customer.getAge()<65) {
 			this.premium-=100;
 		}
-		if(customer.getSex()=="M" && customer.getisMarried()==false && customer.getAge()<25) {
+		if(customer.getSex().equals("M") && customer.getisMarried()==false && customer.getAge()<25) {
 			this.premium+=1500;
 		}
-		if(customer.getSex()=="F" || customer.getisMarried()==true) {
+		if(customer.getSex().equals("F") || customer.getisMarried()==true) {
 			this.premium-=200;
 		}
 		return premium;
