@@ -29,7 +29,8 @@ public class CarInsurance {
     	do {
     		System.out.print("Are you married? (Y/N):");
     		married = input.nextLine().strip();
-    	}while (!(married.equals("Y") || married.equals("N")));
+    	}
+    	while (!(married.equals("Y") || married.equals("N")));
     	
     	input.close();
     	
@@ -37,7 +38,7 @@ public class CarInsurance {
     	Insurance insurance = new Insurance(client);
 		insurance.calculateInsure();
 		
-		System.out.println("You have to pay: $"+insurance.getPremium());
+		System.out.println("You have to pay: $"+ insurance.getPremium());
     	
     	
     }
