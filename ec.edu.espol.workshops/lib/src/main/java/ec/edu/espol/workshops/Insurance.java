@@ -7,24 +7,24 @@ public class Insurance {
 	protected int premium;
 	
 	public Insurance(Customer customer) {
-		this.customer=customer;
-		this.premium=basePremium;
+		this.customer = customer;
+		this.premium = basePremium;
 			
 	}
 	
 	public int calculateInsure() {
-		if(customer.getAge()>80 || customer.getDriverLicense()==false) {
-			this.premium=-1;
+		if(customer.getAge() > 80 || customer.getDriverLicense()== false) {
+			this.premium= -1;
 			return premium;
 		}
-		if(customer.getAge()>45 && customer.getAge()<65) {
-			this.premium-=100;
+		if(customer.getAge()> 45 && customer.getAge()< 65) {
+			this.premium-= 100;
 		}
-		if(customer.getSex()=="M" && customer.getisMarried()==false && customer.getAge()<25) {
-			this.premium+=1500;
+		if(customer.getSex() == "M" && customer.getisMarried() == false && customer.getAge() < 25) {
+			this.premium += 1500;
 		}
-		if(customer.getSex()=="F" || customer.getisMarried()==true) {
-			this.premium-=200;
+		if(customer.getSex() == "F" || customer.getisMarried()==true) {
+			this.premium -= 200;
 		}
 		return premium;
 	}
