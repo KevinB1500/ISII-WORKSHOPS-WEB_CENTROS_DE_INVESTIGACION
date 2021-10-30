@@ -1,8 +1,16 @@
 package ec.edu.espol.workshops;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class CarInsurance {
+	/**
+	*
+	*
+	* 
+	*/
+	static final Logger log = Logger.getLogger(CarInsurance.class.getName());
+	
 	public static void main(String[] args) {
     	
 		Scanner input = new Scanner(System.in);
@@ -12,22 +20,23 @@ public class CarInsurance {
 		String licence;
 		String married;
 		
-		System.out.print("Enter yout age:");
+		
+		log.fine("Enter your age:");
     	age = input.nextInt();
     	input.nextLine();
     	
     	do {    		
-    		System.out.print("Enter your gender (M/F):");
+    		log.fine("Enter your gender (M/F):");
     		sex =  input.nextLine().strip();
     	} while (!(sex.equals("M") || sex.equals("F"))); 
     	
     	do {
-    		System.out.print("Do you have driver licence? (Y/N):");
+    		log.fine("Do you have driver licence? (Y/N):");
     		licence = input.nextLine().strip();    		
     	} while (!(licence.equals("Y") || !licence.equals("N")));
     	 
     	do {
-    		System.out.print("Are you married? (Y/N):");
+    		log.fine("Are you married? (Y/N):");
     		married = input.nextLine().strip();
     	}while (!(married.equals("Y") || married.equals("N")));
     	
@@ -37,7 +46,7 @@ public class CarInsurance {
     	Insurance insurance = new Insurance(client);
 		insurance.calculateInsure();
 		
-		System.out.println("You have to pay: $"+insurance.getPremium());
+		log.fine("You have to pay: $"+insurance.getPremium());
     	
     	
     }
