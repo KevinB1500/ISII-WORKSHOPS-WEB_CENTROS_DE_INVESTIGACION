@@ -34,7 +34,7 @@ public class CarInsurance {
     	do {
     		System.out.println("Do you have driver licence? (Y/N):");
     		licence = input.nextLine();    		
-    	} while (!(licence.equals("Y") || !licence.equals("N")));
+    	} while (!(licence.equals("Y") || licence.equals("N")));
     	if(licence.equals("Y")) {
     		licenceb = true;
     	}else {

@@ -15,7 +15,7 @@ public class Insurance {
 	}
 	
 	public int calculateInsure() {
-		if(customer.getAge() > 80 || customer.getDriverLicense()== false) {
+		if(customer.getAge() > 80 || customer.getDriverLicense()== false || customer.getAge() < 18) {
 			this.premium= -1;
 			return premium;
 		}
