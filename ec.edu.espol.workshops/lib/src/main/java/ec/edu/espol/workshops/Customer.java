@@ -17,6 +17,10 @@ public class Customer {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Customer() {
+		
+	}
+	
 	public int getAge() {
 		return age;
 	}
