@@ -1,7 +1,7 @@
 package ec.edu.espol.workshops;
 
 import java.util.Scanner;
-import java.util.logging.Logger;
+import java.lang.String;
 
 public class CarInsurance {
 	/**
@@ -28,7 +28,7 @@ public class CarInsurance {
     	
     	do {    		
     		System.out.println("Enter your gender (M/F):");
-    		sex =  input.nextLine().strip();
+    		sex =  input.nextLine();
     	} while (!(sex.equals("M") || sex.equals("F"))); 
     	
     	do {
