@@ -2,74 +2,58 @@ package ec.edu.espol.workshops;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.en.And;
 
 import static org.junit.Assert.*;
 
 public class StepsDefs {
  private int actualAnswer;
- Customer customer = new Customer();
- Insurance insurance;
+ private int age;
+ private String sex;
+ private boolean hasDriverLicense;
+ private boolean isMarried;
  
  @Given("has no license")
  public void has_no_license() {
- customer.setAge(40);
- customer.setDriverLicense(false);
- customer.setisMarried(false);
- customer.setSex("M");
- }
- @When("insurance is calculated")
- public void insurance_is_calculated() {
- insurance = new Insurance(customer);
- actualAnswer = insurance.getPremium();
- }
- @Then("Show -1")
- public void show_failure(){
- assertEquals(-1, actualAnswer);
+	 hasDriverLicense = false; 
+	 age = 20;
+	 isMarried = false;
+	 sex = "M";
  }
  
- 
- /*
- @Given("has no license")
- public void has_no_license() {
- customer.setAge(40);
- customer.setDriverLicense(false);
- customer.setisMarried(false);
- customer.setSex("M");
-  }
-
- @Given("90 years old")
- public void ninety_years_old() {
-customer.setAge(90);
-customer.setDriverLicense(true);
-customer.setisMarried(false);
-customer.setSex("M");
+ @Given("is 90 years old")
+ public void is_90_years_old() {
+	 age = 90;
+	 hasDriverLicense = false;
+	 isMarried = false;
+	 sex = "M";
  }
  
- @Given("is married and 50 years old")
+ @Given("is married")
  public void is_married() {
-	 customer.setAge(50);
-	 customer.setDriverLicense(true);
-	 customer.setisMarried(true);
-	 customer.setSex("M");
+	 isMarried = true; 
+ } 
+ 
+ 
+ @Given("is 50 years old")
+ public void is_50_years_old() {
+	 age = 50; 
+	 hasDriverLicense = true;
+	 sex = "M";
  }
+ 
  
  @When("insurance is calculated")
  public void insurance_is_calculated() {
- insurance = new Insurance(customer);
- actualAnswer = insurance.getPremium();
+	 Customer customer = new Customer(this.age,this.hasDriverLicense,this.sex,this.isMarried);
+	 Insurance insurance = new Insurance(customer);
+	 insurance.calculateInsure();
+	 actualAnswer = insurance.getPremium();
  }
  
- @Then("Show -1")
- public void show_failure(){
- assertEquals(-1, actualAnswer);
- } 
+ @Then("Show {int}")
+ public void Show(int expectedAnswer) {
+	 assertEquals(expectedAnswer, actualAnswer);
+ }
  
- 
- @Then("Show $200")
- public void show200(){
- assertEquals(200, actualAnswer);
- } 
-
-
- */
 }
