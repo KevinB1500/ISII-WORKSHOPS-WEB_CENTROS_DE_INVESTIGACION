@@ -23,7 +23,11 @@ public class CarInsurance {
 		
 		
 		System.out.println("Enter your age:");
-    	age = input.nextInt();
+		try {
+			age = input.nextInt();
+		}catch(Exception e){
+			age = 0;
+		}
     	input.nextLine();
     	
     	do {    		
