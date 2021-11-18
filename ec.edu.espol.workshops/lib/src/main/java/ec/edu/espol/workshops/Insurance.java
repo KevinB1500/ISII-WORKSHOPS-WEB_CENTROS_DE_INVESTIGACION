@@ -19,7 +19,7 @@ public class Insurance {
 			this.premium= -1;
 			return premium;
 		}
-		if(customer.getAge()> 45 && customer.getAge()< 65) {
+		if(customer.getAge() >= 45 && customer.getAge()< 65) {
 			this.premium-= 100;
 		}
 
