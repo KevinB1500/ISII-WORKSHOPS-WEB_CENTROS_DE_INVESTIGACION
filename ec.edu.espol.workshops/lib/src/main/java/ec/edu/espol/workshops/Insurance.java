@@ -30,8 +30,16 @@ public class Insurance {
 
 		if(customer.getSex().equals("F") || customer.getisMarried()==true) {
 			this.premium-=200;
+			if(customer.getAge() > 30 && customer.getAge() < 60) {
+				this.premium-=100;
+			}
 
 		}
+		
+		if(customer.getSex().equals("F") && customer.getAge() > 60) {
+			this.premium -= 50;
+		}
+		
 		return premium;
 	}
 	
